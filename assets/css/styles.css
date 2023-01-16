@@ -316,7 +316,7 @@ footer {
     position: relative;
 }
 
-/* notes mode digit position*/
+/* notes mode digit position */
 #notes.active {
     background-color: skyblue;
 }
@@ -371,30 +371,24 @@ footer {
 }
 
 /* MEDIA QUERY @ 1100PX WIDTH */
-
 @media screen and (max-width:1100px) {
+
+/* change text layout to column for rules section on homepage */
     #homepage-rules {
         flex-direction: column;
         align-items: center;
     }
 
-#guide-image-container {
-    display: inline-flex;
-    justify-content: center;
-    align-items: center;
-    max-width: 100%;
-    border: 6px solid black;
-    }
-
-#guide-image {
-    width: 100%;
-    height: 100%;
+/* increases width of image on homepage for better visibility */
+    #guide-image-container {
+        max-width: 95%;
     }
 }
 
 /* MEDIA QUERY @  900PX WIDTH */
-
 @media screen and (max-width:900px) {
+
+/* reduces width and margins of buttons to left and right of board on game page */
     #container-left {
         margin-right: 5px;
     }
@@ -405,5 +399,111 @@ footer {
 
     .digit-btn {
         width: 60px;
+    }
+}
+
+/* MEDIA QUERY @  650PX WIDTH */
+@media screen and (max-width:650px) {
+
+/* reduce size of buttons on game page */
+    .gamepage-buttons {
+        padding: 5px 5px;
+        font-size: 12px;
+        width: 65px;
+        height: 45px;
+    }
+
+    .digit-btn {
+        font-size: 12px;
+    }
+
+    #container-left {
+        margin-right: 5px;
+    }
+    
+    #container-right {
+        margin-left: 5px;
+    }
+
+    /* reduce size of board, boxes and tiles */
+    #board {
+        min-height: 225px;
+        max-height: 225px;
+        min-width: 225px;
+        max-width: 225px;
+        border: solid #721200 4px;
+        display: flex;
+        background-color: #fff;
+    }
+
+    .tile {
+        height: 22.5px;
+        width: 22.5px;
+    }
+
+    .box {
+        height: 72.5px;
+        width: 72.5px;
+    }
+
+    .digit-btn {
+        height: 23px;
+        margin: 1px 0;
+        background-color: #721200;
+        color: #fff;
+        font-family: 'lustria', sans-serif;
+        font-weight: bold;
+        width: 30px;
+        padding: 0;
+    }
+
+/* reduce size of text for values inside the board */
+    
+    .note {
+        position: absolute;
+        font-size: 0.4rem;
+    }
+
+    .tile > span:nth-child(1) {
+        font-size: normal;
+        font-size: 0.9rem;
+        font-weight: bold;
+        color: black;
+    }
+
+/* reposition buttons at bottom of board */
+    #container-bottom {
+        margin: 230px;
+    }
+
+/* reduce size of how to play and music button at top of game page */
+    .how-to-play {
+        font-size: 12px;
+        width: 160px;
+        height: 45px;
+        justify-content: center;
+        align-items: center;
+    }
+
+/* reduce size text for majority of buttons surrounding the board */
+    .gamepage-buttons {
+        font-size: 0.7rem;
+        font-weight: normal;
+    }
+
+/* reduce size of error counter text */
+    .counter-text {
+        font-size: 0.7rem;
+    }
+
+/* reduce appearance of buttons being 'clicked' */
+    .gamepage-buttons:active, .digit-btn:active {
+        box-shadow: 0 0 0 white;
+        margin: 0px;
+    }
+
+    .how-to-play:active  {
+        box-shadow: 0 0 0 white;
+        margin-bottom: 0px;
     }
 }
