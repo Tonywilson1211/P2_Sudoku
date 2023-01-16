@@ -357,3 +357,31 @@ function playPause() {
 playPause()
 
 ///////////////////////////////////////////
+
+//Completed Game Conditions
+
+function endGame() {
+  let allFilled = true
+  let allCorrect = true
+  tiles.forEach(function(tile) {
+      let index = parseInt(tile.id.substring(1))
+      let expected = boards[diffIndex][1][index]
+      let value = tile.querySelector('span').innerHTML
+      if (value === ' ') {
+          allFilled = false;
+      } else {
+          if (value !== expected) {
+              allCorrect = false
+          }
+      }
+  })
+  if (allFilled) {
+      if (allCorrect) {
+          alert(`Congratulations! You have completed this game of Sudoku!! You completed the ${diff.innerHTML} setting in ${time.innerHTML} with ${errors} errors.`)
+      } else {
+          alert(`Game Over. You have not been successful on this occasion. Try starting a new game or changing the difficulty level.`)
+      }
+  }
+}       
+
+///////////////////////////////////////////
