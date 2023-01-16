@@ -203,3 +203,50 @@ footer {
     box-shadow: 0 0 0 white;
     margin: 6px 10px 2px 10px;
 }
+
+/*board styling*/
+
+#board {
+    min-height: 480px;
+    max-height: 480px;
+    min-width: 480px;
+    max-width: 480px;
+    border: solid #721200 4px;
+    display: flex;
+    background-color: #fff;
+}
+
+.box {
+    height: 157.5px;
+    width: 157.5px;
+    border: solid white 1px;
+    background-color: #d8cdb7;
+    display: grid;
+    grid-template-columns: auto auto auto;
+}
+
+.tile {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 50px;
+    width: 50px;
+    border: dotted white 1px;
+    user-select: none;
+}
+
+.tile > span:nth-child(1) {
+    font-size: x-large;
+    font-weight: bold;
+    color: black;
+}
+
+#box2, #box4, #box6, #box8 {
+    background-color: #bdb29f;
+}
+
+#game-container {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 150px ;
+}
