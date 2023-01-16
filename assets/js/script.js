@@ -148,3 +148,43 @@ tiles.forEach(function(tile) {
 })
 
 ///////////////////////////////////////////
+
+//Undo button
+
+let future = []
+let undo = document.querySelector('#undo')
+
+undo.addEventListener('click', function(){
+    let prev_action = memory.splice(-1)[0]
+    if (isPaused) {
+        return;
+    }
+    if (prev_action) {
+        future.push(prev_action)
+        let {id, prev} = prev_action
+        let target = document.querySelector(`.tile#${id} > span`)
+        target.innerHTML = prev
+    } else {
+        alert('Nothing to Undo!')
+    }
+})
+
+// Redo button
+
+let redo = document.querySelector('#redo')
+redo.addEventListener('click', function(){
+    let prev_action = future.splice(-1)[0]
+    if (isPaused) {
+        return;
+    }
+    if (prev_action) {
+        memory.push(prev_action)
+        let {id, chosen} = prev_action
+        let target = document.querySelector(`.tile#${id} > span`)
+        target.innerHTML = chosen
+    } else {
+        alert('Nothing to Redo!')
+    }
+})
+
+/////////////////////////////////////////
