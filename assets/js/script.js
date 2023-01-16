@@ -188,3 +188,44 @@ redo.addEventListener('click', function(){
 })
 
 /////////////////////////////////////////
+
+// Digit buttons and Note buttons
+let digits = document.querySelectorAll('#digits > .digit-btn:nth-child(n+2)')
+let chosen = null
+let reset = null
+
+digits.forEach(function(digit) {
+  digit.addEventListener('click', function() {
+      if (isPaused) {
+          return;
+      }
+      if (noting == false) {
+          if (reset == this) {
+              this.style.background = '#721200'
+              chosen = null
+              reset = null
+          } else {
+              if (reset) {
+                  reset.style.background = '#721200'
+              }
+              chosen = this.innerHTML
+              this.style.background = 'green'
+              reset = this
+          }
+      } else {
+          if (reset == this) {
+              this.style.background = '#721200'
+              reset = null
+              chosen = null
+          } else {
+              if (reset) {
+                  reset.style.background = '#721200'
+              }
+              chosen = this.innerHTML
+              this.style.background = 'skyblue'
+              reset = this
+          }
+      }
+  })});
+
+////////////////////////////////////////////
