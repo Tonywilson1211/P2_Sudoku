@@ -1,5 +1,3 @@
-////////////////////////////////////
-
 // 3 premade board numbers to populate the board with. First line is unsolved, second line is filled in with all correct numbers.
 
 let boards = [
@@ -67,7 +65,8 @@ diff.addEventListener('click', function() {
   if (confirm('This action will start a new game with a different difficulty')) {
     switchDifficulty()
     timerReset()
-    newGame()
+    errorReset()
+    endGame() 
 } else {
     switchDifficulty()
 } 
@@ -77,7 +76,9 @@ newGame.addEventListener('click', function() {
 if (confirm('This action will restart the game')) {
     populateTiles(diffIndex)
     timerReset() 
-    newGame()
+    errorReset()
+    endGame() 
+    
 } else {
     populateTiles(diffIndex)
 } 
@@ -355,6 +356,14 @@ function playPause() {
 }
  
 playPause()
+
+///////////////////////////////////////////
+
+//Errors
+function errorReset() {
+  errors = 0;
+  document.querySelector("#error > span").innerHTML = errors;
+}
 
 ///////////////////////////////////////////
 
