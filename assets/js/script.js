@@ -66,6 +66,8 @@ populateTiles(0)
 diff.addEventListener('click', function() {
   if (confirm('This action will start a new game with a different difficulty')) {
     switchDifficulty()
+    timerReset()
+    newGame()
 } else {
     switchDifficulty()
 } 
@@ -74,6 +76,8 @@ diff.addEventListener('click', function() {
 newGame.addEventListener('click', function() {
 if (confirm('This action will restart the game')) {
     populateTiles(diffIndex)
+    timerReset() 
+    newGame()
 } else {
     populateTiles(diffIndex)
 } 
@@ -187,7 +191,58 @@ redo.addEventListener('click', function(){
     }
 })
 
-/////////////////////////////////////////
+////////////////////////////////////////////
+
+//Timer
+
+let time = document.querySelector('#timer > span')
+let seconds = 0
+let minutes = 0
+let timing = 0
+
+function timer_increment() {
+    timing = setInterval(function () {
+        seconds++
+        if (seconds >= 60) {
+            seconds = 0
+            minutes += 1
+        }
+        time.innerHTML = `${minutes}:${String(seconds).padStart(2, '0')}`
+    }, 1000)
+}
+timer_increment()
+
+function timerReset() {
+    seconds = -1;
+    minutes = 0;
+    time.innerHTML = `0:00`;
+}
+
+timer.addEventListener("click", function () {
+    if (timing) {
+        clearInterval(timing);
+        timing = null;
+        time.innerHTML = "||";
+        
+    } else {
+        timer_increment();
+    }
+});
+
+//Pause
+let isPaused = false;
+let timer = document.querySelector('#timer');
+
+timer.addEventListener('click', function() {
+    isPaused = !isPaused;
+    if(isPaused == true) {
+        alert('The game is paused. You will not be able to place numbers on the board or use the undo/redo buttons')
+    } if (isPaused == false){
+        alert('The game is now unpaused')
+    }
+});
+
+///////////////////////////////////////////
 
 // Digit buttons and Note buttons
 let digits = document.querySelectorAll('#digits > .digit-btn:nth-child(n+2)')
@@ -228,4 +283,4 @@ digits.forEach(function(digit) {
       }
   })});
 
-////////////////////////////////////////////
+///////////////////////////////////////////
