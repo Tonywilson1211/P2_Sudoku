@@ -431,9 +431,6 @@ footer {
         max-height: 225px;
         min-width: 225px;
         max-width: 225px;
-        border: solid #721200 4px;
-        display: flex;
-        background-color: #fff;
     }
 
     .tile {
@@ -449,10 +446,6 @@ footer {
     .digit-btn {
         height: 23px;
         margin: 1px 0;
-        background-color: #721200;
-        color: #fff;
-        font-family: 'lustria', sans-serif;
-        font-weight: bold;
         width: 30px;
         padding: 0;
     }
