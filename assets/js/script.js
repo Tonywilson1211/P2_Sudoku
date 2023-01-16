@@ -76,7 +76,8 @@ if (confirm('This action will restart the game')) {
     timerReset() 
     errorReset()
     endGame() 
-    
+    memory = []
+    future = []
 }
 })
 
