@@ -107,6 +107,9 @@ let tiles = document.querySelectorAll('.tile')
 
 tiles.forEach(function(tile) {
     tile.addEventListener('click', function(event) {
+      if (isPaused) {
+        return
+        }
          if (!this.querySelector('span').classList.contains('preset')) {
             if (!noting) {
                 if (chosen != null) {
