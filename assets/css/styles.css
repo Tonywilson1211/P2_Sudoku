@@ -1,0 +1,47 @@
+@import url('https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400;1,400;1,500&family=Lustria&family=Permanent+Marker&display=swap');
+
+/* three font styles in use: lora, lustria, permanent marker */
+
+/* GLOBAL STYLE SETTINGS */
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    font-family: 'lora', sans-serif;
+    font-weight: 400;
+    text-align: center;
+    font-size: 16px;
+    text-decoration: none;
+}
+
+body {
+    background-image: url('../images/site/background.jpg');
+    background-size: cover;
+}
+
+h1 {
+    font-family: 'permanent marker', sans-serif;
+    font-size: 5rem;
+    color: #721200;
+}
+
+h2 {
+    font-family: 'permanent marker', sans-serif;
+    font-size: 2.5rem;
+    margin-top: 50px;
+    color: #721200;
+}
+
+h3 {
+    font-family: 'permanent marker', sans-serif;
+    font-size: 2rem;
+    color: #721200;
+    text-decoration: underline;
+}
+
+p {
+    font-family: 'lustria', sans-serif;
+    font-weight: bold;
+    color: #721200;
+    font-size: 1.5rem;
+}
