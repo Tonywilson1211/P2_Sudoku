@@ -34,6 +34,8 @@ function switchDifficulty () {
     difficultyText = difficulties[diffIndex]
     diff.innerHTML = difficultyText
     populateTiles(diffIndex)
+    memory = []
+    future = []
 }
 
 ////////////////////////////////////
@@ -46,7 +48,7 @@ function populateTiles(diffIndex) {
       let tile = document.querySelector(`.tile#t${n} > span`)
       let number = boards[diffIndex][0][n]
       tile.innerHTML = number
-      // Add any tiles with no value to a preset class. Class will be called upon later. 
+      // Add any tiles with no value to a preset class. Class will be called upon in tile event listeners. 
       if (number != ' '){
           tile.classList.add('preset')
       } else {
@@ -78,3 +80,71 @@ if (confirm('This action will restart the game')) {
 })
 
 ////////////////////////////////////
+
+//Tile click event listeners.
+
+/* 
+The forEach method is iterating through each tile adding a click event. 
+When a tile is clicked, the code checks if the tile  does not contain a preset class in its inner span element.
+If true, the code then checks if noting is false.
+If true, code checks if chosen is not null. 
+If conditions are met, code then does the following:
+1. Stores the previous innerHTML span element in memory array
+2. Sets the tile to chosen 
+3. Calls the endGame function (which checks to see if conditions have been met for ending the game)
+4. Removes any notes that might have been present in the tile
+5. Checks if the user entered the correct number into the tile. If not, the error counter increments by 1. 
+If noting is true, div element with class note n${chosen} and append the div element to the second inner span element of tile, 
+and append the note to the inner span element in numerical order. If there is already a note with the same number, it will remove it.
+*/
+
+let memory = []
+let errors = 0
+let errorCounter = document.querySelector('#error > span')
+let tiles = document.querySelectorAll('.tile')
+
+tiles.forEach(function(tile) {
+    tile.addEventListener('click', function(event) {
+         if (!this.querySelector('span').classList.contains('preset')) {
+            if (!noting) {
+                if (chosen != null) {
+                    let prev = this.querySelector('span').innerHTML
+                    let id = this.id
+                    memory.push({id, prev, chosen})
+                    this.querySelector('span').innerHTML = chosen
+                    endGame()
+                    future = []
+                    let span2 = this.querySelector('span:nth-child(2)')
+                    span2.innerHTML = ''
+                    let index = parseInt(this.id.substring(1))
+                    let expected = boards[diffIndex][1][index]
+                    if (chosen != expected) {
+                        this.classList.add('incorrect')
+                        errors += 1 
+                        errorCounter.innerHTML = errors
+                    }
+                }
+            } else {
+                let span2 = this.querySelector('span:nth-child(2)')
+                let existing = span2.querySelector(`.n${chosen}`)
+                if (!existing) {
+                    let div = document.createElement('div') 
+                    div.className = `note n${chosen}`
+                    div.innerHTML = chosen
+                    span2.appendChild(div)
+                    let numbers = [1,2,3,4,5,6,7,8,9]
+                    numbers.forEach(function(n) {
+                        let note = span2.querySelector(`.note.n${n}`)
+                        if (note) {
+                            span2.appendChild(note)
+                        }
+                    })
+                } else {
+                    existing.remove()
+                }
+            }
+        }
+    })
+})
+
+///////////////////////////////////////////
