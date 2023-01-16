@@ -191,8 +191,9 @@ redo.addEventListener('click', function(){
 
 ////////////////////////////////////////////
 
-//Timer
+// Timer
 let time = document.querySelector('#timer > span')
+let timer = document.querySelector('#timer');
 let seconds = 0
 let minutes = 0
 let timing = 0
@@ -209,6 +210,7 @@ function timer_increment() {
 }
 timer_increment()
 
+// Timer Reset
 function timerReset() {
     seconds = -1;
     minutes = 0;
@@ -220,15 +222,14 @@ timer.addEventListener("click", function () {
         clearInterval(timing);
         timing = null;
         time.innerHTML = "||";
-        
     } else {
         timer_increment();
     }
-});
+})
 
-//Pause
+// Pause
 let isPaused = false;
-let timer = document.querySelector('#timer');
+
 
 timer.addEventListener('click', function() {
     isPaused = !isPaused;
@@ -315,5 +316,44 @@ autoSolve.addEventListener('click', function(){
             alert('Better luck next time. Click New Game or Difficulty buttons to have another go!')
 
     }})
+
+///////////////////////////////////////////
+
+// How To Play Button 
+
+let playBtn = document.querySelector('#how-to-play')
+function howToPlayBtn() {
+    playBtn.addEventListener('click', function() {
+       if (confirm('You are about to leave this page so any progress you have made will be lost')) {
+        location.assign("index.html")
+       }
+    })
+}
+howToPlayBtn()
+
+///////////////////////////////////////////
+
+//Music
+
+let audio = new Audio('assets/audio/audio.mp3')
+audio.loop = true
+let playPauseBtn = document.querySelector('#audio-btn')
+let count = 0
+function playPause() {
+    playPauseBtn.addEventListener('click', function() {
+        if (count == 0) {
+            count = 1        
+            audio.play()
+            playPauseBtn.innerHTML = 'Pause Music'
+            
+        } else {
+            count = 0
+            audio.pause()
+            playPauseBtn.innerHTML = 'Play Music'
+        } 
+    })
+}
+ 
+playPause()
 
 ///////////////////////////////////////////
