@@ -67,9 +67,7 @@ diff.addEventListener('click', function() {
     timerReset()
     errorReset()
     endGame() 
-} else {
-    switchDifficulty()
-} 
+}
 })
 
 newGame.addEventListener('click', function() {
@@ -79,9 +77,7 @@ if (confirm('This action will restart the game')) {
     errorReset()
     endGame() 
     
-} else {
-    populateTiles(diffIndex)
-} 
+}
 })
 
 ////////////////////////////////////
