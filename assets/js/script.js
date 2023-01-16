@@ -154,7 +154,6 @@ tiles.forEach(function(tile) {
 ///////////////////////////////////////////
 
 //Undo button
-
 let future = []
 let undo = document.querySelector('#undo')
 
@@ -174,7 +173,6 @@ undo.addEventListener('click', function(){
 })
 
 // Redo button
-
 let redo = document.querySelector('#redo')
 redo.addEventListener('click', function(){
     let prev_action = future.splice(-1)[0]
@@ -194,7 +192,6 @@ redo.addEventListener('click', function(){
 ////////////////////////////////////////////
 
 //Timer
-
 let time = document.querySelector('#timer > span')
 let seconds = 0
 let minutes = 0
@@ -244,7 +241,7 @@ timer.addEventListener('click', function() {
 
 ///////////////////////////////////////////
 
-// Digit buttons and Note buttons
+// Digit buttons 
 let digits = document.querySelectorAll('#digits > .digit-btn:nth-child(n+2)')
 let chosen = null
 let reset = null
@@ -283,7 +280,7 @@ digits.forEach(function(digit) {
       }
   })});
 
-// notes
+// Note buttons
 let noting = false
 let notes = document.querySelector('#notes')
 
@@ -300,5 +297,23 @@ notes.addEventListener('click', function(){
         }
     }
 })
+
+///////////////////////////////////////////
+
+//Auto Solve
+
+let autoSolve = document.querySelector('#auto-solve')
+
+autoSolve.addEventListener('click', function(){
+    if (confirm('This action will reveal all answers and end the game')) {
+            let answers = boards[diffIndex][1].split('')
+            answers.forEach(function(answer, n){
+                let solve = document.querySelector(`#t${n} > span`) 
+                solve.innerHTML = answer
+            } 
+            ) 
+            alert('Better luck next time. Click New Game or Difficulty buttons to have another go!')
+
+    }})
 
 ///////////////////////////////////////////
