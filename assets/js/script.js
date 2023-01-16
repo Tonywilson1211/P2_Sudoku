@@ -22,24 +22,6 @@ let boards = [
 
 ////////////////////////////////////
 
-// Listen events for difficulty button and new game button
-
-diff.addEventListener('click', function() {
-    if (confirm('This action will start a new game with a different difficulty')) {
-      switchDifficulty()
-  } else {
-      switchDifficulty()
-  } 
-})
-
-newGame.addEventListener('click', function() {
-  if (confirm('This action will restart the game')) {
-      populateTiles(diffIndex)
-  } else {
-      populateTiles(diffIndex)
-  } 
-})
-
 // When called, this Function allows for text and the corresponding board layout to change when user clicks on the difficulty button. 
 let diff = document.querySelector('#diff')
 let diffIndex = 0
@@ -74,5 +56,25 @@ function populateTiles(diffIndex) {
 }
 
 populateTiles(0)
+
+////////////////////////////////////
+
+// Listen events for difficulty button and new game button
+
+diff.addEventListener('click', function() {
+  if (confirm('This action will start a new game with a different difficulty')) {
+    switchDifficulty()
+} else {
+    switchDifficulty()
+} 
+})
+
+newGame.addEventListener('click', function() {
+if (confirm('This action will restart the game')) {
+    populateTiles(diffIndex)
+} else {
+    populateTiles(diffIndex)
+} 
+})
 
 ////////////////////////////////////
