@@ -283,4 +283,22 @@ digits.forEach(function(digit) {
       }
   })});
 
+// notes
+let noting = false
+let notes = document.querySelector('#notes')
+
+notes.addEventListener('click', function(){
+    if (noting == false) {
+        noting = true
+        notes.classList.add('active')
+    } else {
+        noting = false 
+        notes.classList.remove('active')
+        if (reset) {
+            reset.style.background = '#721200'
+            reset = null
+        }
+    }
+})
+
 ///////////////////////////////////////////
