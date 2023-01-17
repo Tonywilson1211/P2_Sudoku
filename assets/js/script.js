@@ -67,6 +67,7 @@ diff.addEventListener('click', function() {
     timerReset()
     errorReset()
     endGame() 
+    notesReset()
 }
 })
 
@@ -76,6 +77,7 @@ if (confirm('This action will restart the game')) {
     timerReset() 
     errorReset()
     endGame() 
+    notesReset()
     memory = []
     future = []
 }
@@ -151,6 +153,21 @@ tiles.forEach(function(tile) {
         }
     })
 })
+
+///////////////////////////////////////////
+
+//Reset Notes when new game starts
+
+function notesReset() {
+    tiles = document.querySelectorAll('.tile')
+    tiles.forEach(function(note) {
+        note = document.querySelector('.note')
+        if (note) {
+            note.remove()
+        }
+    })
+}
+
 
 ///////////////////////////////////////////
 
