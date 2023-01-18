@@ -176,10 +176,10 @@ let future = []
 let undo = document.querySelector('#undo')
 
 undo.addEventListener('click', function(){
-    let prev_action = memory.splice(-1)[0]
     if (isPaused) {
         return;
     }
+    let prev_action = memory.splice(-1)[0]
     if (prev_action) {
         future.push(prev_action)
         let {id, prev} = prev_action
@@ -193,10 +193,10 @@ undo.addEventListener('click', function(){
 // Redo button
 let redo = document.querySelector('#redo')
 redo.addEventListener('click', function(){
-    let prev_action = future.splice(-1)[0]
     if (isPaused) {
         return;
     }
+    let prev_action = future.splice(-1)[0]
     if (prev_action) {
         memory.push(prev_action)
         let {id, chosen} = prev_action
