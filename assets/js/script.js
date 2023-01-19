@@ -272,39 +272,23 @@ let digits = document.querySelectorAll('#digits > .digit-btn:nth-child(n+2)')
 let chosen = null
 let reset = null
 
-digits.forEach(function(digit) {
+digits.forEach(digit => {
   digit.addEventListener('click', function() {
-      if (isPaused) {
-          return;
+    if (isPaused) return;
+    if (reset === this) {
+      this.classList.remove('selected')
+      chosen = null;
+      reset = null;
+    } else {
+      if (reset) {
+        reset.classList.remove('selected')
       }
-      if (noting == false) {
-          if (reset == this) {
-              this.style.background = '#721200'
-              chosen = null
-              reset = null
-          } else {
-              if (reset) {
-                  reset.style.background = '#721200'
-              }
-              chosen = this.innerHTML
-              this.style.background = 'green'
-              reset = this
-          }
-      } else {
-          if (reset == this) {
-              this.style.background = '#721200'
-              reset = null
-              chosen = null
-          } else {
-              if (reset) {
-                  reset.style.background = '#721200'
-              }
-              chosen = this.innerHTML
-              this.style.background = 'skyblue'
-              reset = this
-          }
-      }
-  })});
+      this.classList.add('selected')
+      chosen = this.innerHTML;
+      reset = this;
+    }
+  });
+});
 
 // Note buttons
 let noting = false
