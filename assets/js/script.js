@@ -50,6 +50,7 @@ function populateTiles(diffIndex) {
       if (number != ' '){
           tile.classList.add('preset')
       } else {
+        // When a new game begins the tile is checked again and preset removed if tile has no number.
           tile.classList.remove('preset')  
       } 
   })
