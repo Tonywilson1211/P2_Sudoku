@@ -149,21 +149,21 @@ function gameMemory(span, tile) {
     memory.push({id, prev, chosen})
     span.innerHTML = chosen
     // checks to see if end game conditions have been met
-    endGame();
+    endGame()
     let span2 = tile.querySelector('span:nth-child(2)')
     span2.innerHTML = ''
     let index = parseInt(tile.id.substring(1))
     let expected = boards[diffIndex][1][index]
     if (chosen != expected) {
         tile.classList.add('incorrect')
-        errors += 1;
+        errors += 1
         errorCounter.innerHTML = errors
         }
 }
 
 tiles.forEach(function(tile) {
-    tile.addEventListener('click', tileClick);
-});
+    tile.addEventListener('click', tileClick)
+})
 
 ///////////////////////////////////////////
 
@@ -188,7 +188,7 @@ let undo = document.querySelector('#undo')
 
 undo.addEventListener('click', function(){
     if (isPaused) {
-        return;
+        return
     }
     let prev_action = memory.splice(-1)[0]
     if (prev_action) {
@@ -205,7 +205,7 @@ undo.addEventListener('click', function(){
 let redo = document.querySelector('#redo')
 redo.addEventListener('click', function(){
     if (isPaused) {
-        return;
+        return
     }
     let prev_action = future.splice(-1)[0]
     if (prev_action) {
@@ -222,7 +222,7 @@ redo.addEventListener('click', function(){
 
 // Timer
 let time = document.querySelector('#timer > span')
-let timer = document.querySelector('#timer');
+let timer = document.querySelector('#timer')
 let seconds = 0
 let minutes = 0
 let timing = 0
@@ -241,33 +241,33 @@ timer_increment()
 
 // Timer Reset
 function timerReset() {
-    seconds = -1;
-    minutes = 0;
-    time.innerHTML = `0:00`;
+    seconds = -1
+    minutes = 0
+    time.innerHTML = `0:00`
 }
 
 timer.addEventListener("click", function () {
     if (timing) {
-        clearInterval(timing);
-        timing = null;
-        time.innerHTML = "||";
+        clearInterval(timing)
+        timing = null
+        time.innerHTML = "||"
     } else {
-        timer_increment();
+        timer_increment()
     }
 })
 
 // Pause
-let isPaused = false;
+let isPaused = false
 
 
 timer.addEventListener('click', function() {
-    isPaused = !isPaused;
+    isPaused = !isPaused
     if(isPaused == true) {
         alert('The game is paused. You will not be able to place numbers on the board or use the undo/redo buttons')
     } if (isPaused == false){
         alert('The game is now unpaused')
     }
-});
+})
 
 ///////////////////////////////////////////
 
@@ -278,36 +278,36 @@ let reset = null
 let noting = false
 
 function handleDigitClick(event) {
-    if (isPaused) return;
+    if (isPaused) return
     if (reset === event.currentTarget) {
-        resetDigit();
+        resetDigit()
     } else {
-        resetDigit();
-        chosen = event.currentTarget.innerHTML;
-        event.currentTarget.style.background = noting ? 'skyblue' : 'green';
-        reset = event.currentTarget;
+        resetDigit()
+        chosen = event.currentTarget.innerHTML
+        event.currentTarget.style.background = noting ? 'skyblue' : 'green'
+        reset = event.currentTarget
     }
 }
 
 function resetDigit() {
     if (reset) {
-        reset.style.background = '#721200';
-        reset = null;
-        chosen = null;
+        reset.style.background = '#721200'
+        reset = null
+        chosen = null
     }
 }
 
 digits.forEach(digit => {
-    digit.addEventListener('click', handleDigitClick);
-});
+    digit.addEventListener('click', handleDigitClick)
+})
 
 let notes = document.querySelector('#notes')
 
 notes.addEventListener('click', function(){
-    noting = !noting;
-    notes.classList.toggle('active');
+    noting = !noting
+    notes.classList.toggle('active')
     if (!noting) {
-        resetDigit();
+        resetDigit()
     }
 })
 
@@ -372,8 +372,8 @@ playPause()
 
 //Errors
 function errorReset() {
-  errors = 0;
-  document.querySelector("#error > span").innerHTML = errors;
+  errors = 0
+  document.querySelector("#error > span").innerHTML = errors
 }
 
 ///////////////////////////////////////////
@@ -388,7 +388,7 @@ function endGame() {
       let expected = boards[diffIndex][1][index]
       let value = tile.querySelector('span').innerHTML
       if (value === ' ') {
-          allFilled = false;
+          allFilled = false
       } else {
           if (value !== expected) {
               allCorrect = false
