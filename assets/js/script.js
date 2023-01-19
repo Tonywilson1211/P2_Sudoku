@@ -112,6 +112,9 @@ function tileClick(event) {
         // If user has no number selected, this prohibits the user from replacing a number on the board with an empty value
         case chosen === null:
             return
+        // This prohibits duplicate entries into a tile. 
+        case span.innerHTML === chosen:
+            break
         // If all conditions are met, number is entered into the board and stored in game memory should undo/redo functions be used by user
         default:
             gameMemory(span, tile)   
@@ -272,40 +275,39 @@ timer.addEventListener('click', function() {
 let digits = document.querySelectorAll('#digits > .digit-btn:nth-child(n+2)')
 let chosen = null
 let reset = null
+let noting = false
+
+function handleDigitClick(event) {
+    if (isPaused) return;
+    if (reset === event.currentTarget) {
+        resetDigit();
+    } else {
+        resetDigit();
+        chosen = event.currentTarget.innerHTML;
+        event.currentTarget.style.background = noting ? 'skyblue' : 'green';
+        reset = event.currentTarget;
+    }
+}
+
+function resetDigit() {
+    if (reset) {
+        reset.style.background = '#721200';
+        reset = null;
+        chosen = null;
+    }
+}
 
 digits.forEach(digit => {
-  digit.addEventListener('click', function() {
-    if (isPaused) return;
-    if (reset === this) {
-      this.classList.remove('selected')
-      chosen = null;
-      reset = null;
-    } else {
-      if (reset) {
-        reset.classList.remove('selected')
-      }
-      this.classList.add('selected')
-      chosen = this.innerHTML;
-      reset = this;
-    }
-  });
+    digit.addEventListener('click', handleDigitClick);
 });
 
-// Note buttons
-let noting = false
 let notes = document.querySelector('#notes')
 
 notes.addEventListener('click', function(){
-    if (noting == false) {
-        noting = true
-        notes.classList.add('active')
-    } else {
-        noting = false 
-        notes.classList.remove('active')
-        if (reset) {
-            reset.style.background = '#721200'
-            reset = null
-        }
+    noting = !noting;
+    notes.classList.toggle('active');
+    if (!noting) {
+        resetDigit();
     }
 })
 
