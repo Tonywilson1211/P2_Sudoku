@@ -284,7 +284,7 @@ function handleDigitClick(event) {
     } else {
         resetDigit()
         chosen = event.currentTarget.innerHTML
-        event.currentTarget.style.background = noting ? 'skyblue' : 'green'
+        event.currentTarget.style.background = 'green'
         reset = event.currentTarget
     }
 }
@@ -302,13 +302,9 @@ digits.forEach(digit => {
 })
 
 let notes = document.querySelector('#notes')
-
 notes.addEventListener('click', function(){
     noting = !noting
     notes.classList.toggle('active')
-    if (!noting) {
-        resetDigit()
-    }
 })
 
 ///////////////////////////////////////////
