@@ -98,26 +98,29 @@ function tileClick(event) {
     let tile = event.currentTarget
     let span = tile.querySelector('span')
     let span2 = tile.querySelector('span:nth-child(2)')
-    switch(true) {
-        // If game is paused no values can be entered onto the board
-        case isPaused:
-            return
-        // If a tile contains a 'preset' number then user cannot overwrite it or insert a note
-        case span.classList.contains('preset'):
-            return
+
+
+// If game is paused no values can be entered onto the board
+// If a tile contains a 'preset' number then user cannot overwrite it or insert a note
+// If notes has been turned on then note function is triggered i.e allows notes to be entered onto board
+// If user has no number selected this then prohibits the user from replacing a number on the board with an empty value
+// This prohibits duplicate entries into a tile. 
+// If all conditions are met, number is entered into the board and stored in game memory should undo/redo functions be used by user
+
+
+    if (isPaused || (span.classList.contains('preset') || chosen === null || span.innerHTML === chosen)) {
+// isPaused: If game is paused no values can be entered onto the board
+// (span.classList.contains('preset'): If a tile contains a 'preset' number then user cannot overwrite it or insert a note
+// chosen === null: If user has no number selected but clicks on a tile with a a value, this code then prohibits the user from replacing a number on the board with an empty value
+// span.innerHTML === chosen: This prohibits duplicate entries into a tile. 
+        return;
+    }
+    if (noting) {
+        noteMode(span2);
         // If notes has been turned on then note function is triggered i.e allows notes to be entered onto board
-        case noting:
-            noteMode(span2)
-            return
-        // If user has no number selected, this prohibits the user from replacing a number on the board with an empty value
-        case chosen === null:
-            return
-        // This prohibits duplicate entries into a tile. 
-        case span.innerHTML === chosen:
-            break
+    } else {
+        gameMemory(span, tile);
         // If all conditions are met, number is entered into the board and stored in game memory should undo/redo functions be used by user
-        default:
-            gameMemory(span, tile)   
     }
 }
 // noteMode function allows the user to enter notes onto the board to aid them to complete the game
