@@ -262,6 +262,8 @@ Some example user stories which have affected the design:
 1. Upon starting a new game the board automatically generates a new puzzle layout rather than utilising a predetermind arrangement of numbers. 
 2. More options for music tracks so users can control what songs are played.
 3. Option for user to switch between light and dark mode.
+4. Instead of using alerts, user is notified of events/messages via modals. This would improve UX.
+5. How to play page would be removed and instead a modal would be used on the game page that would appear when user selects 'how to play'. This way the game does not have to reset should the user which to check the rules after already having started a game. 
 
 ## Technologies Used
 
