@@ -315,7 +315,6 @@ Some example user stories which have affected the design:
 * All pages were tested to ensure responsiveness on screen sizes from 320px upwards, as defined in WCAG 2.1 Reflow criteria for responsive design on Chrome, Edge, Firefox and Opera browsers.
 * Devices tested using the Google Developer Tools emulator
 
-* Mobile Devices
     * Apple iPhone 4 (320px x 480px)
     * Google Pixel 4 (353px x 745px)
     * BlackBerry Z30 (360px x 640px)  
