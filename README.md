@@ -13,7 +13,7 @@ Sudoku is a well known and popular puzzle game where a user is challenged correc
 * [User Experience (UX)](#user-experience)
     * [User stories](#user-stories)
 * [Design](#design)
-    * [Initial Design - Wireframe](#initial-concept---wire-frames)
+    * [Initial Design - Wireframe](#initial-concept---wireframes)
     * [Website Structure](#website-structure)
     * [Colour Scheme](#colour-scheme)
     * [Typography](#typography)
@@ -27,26 +27,27 @@ Sudoku is a well known and popular puzzle game where a user is challenged correc
     * [Intuitive and Attractive Layout](#intuitive-and-attractive-layout)
     * [User Error Preventative JavaScript](#user-error-preventative-javascript)
     * [Feedback From Website to User](#feedback-from-website-to-user)
-    * [404 Error](#404-page)
+    * [404 Error](#404-error-page)
 * [Future Features](#future-features)
 * [Technologies Used](#technologies-used)
 * [Testing](#testing)
     * [Responsiveness](#responsiveness)
     * [Validators](#validators)
     * [Lighthouse](#lighthouse)
+    * [Wave](#wave)
     * [Functional Testing](#functional-testing)
-    * [Bugs](#bugs)
-    * [Website Development Issues](#website-development-issues)
+* [Bugs](#bugs)
+    * [Current](#current)
+    * [Resolved](#resolved)
 * [Deployment](#deployment-this-project)
-    * [Deployment This Project](#deployment-this-project)
+    * [Deployment This Project](#deployment-of-this-project)
     * [Forking This Project](#forking-this-project)
     * [Cloning This Project](#cloning-this-project)
 * [Credits](#credits)
-* [Content](#content)
 
 ## User Experience
 
-### User Requirements
+### User Stories
 
 Some example user stories which have affected the design:
 
@@ -256,7 +257,7 @@ Some example user stories which have affected the design:
 ![404 Error Page](assets/images/readme/404.jpg)
 
 
-## Features Left to Implement
+## Future Features
 
 1. Upon starting a new game the board automatically generates a new puzzle layout rather than utilising a predetermind arrangement of numbers. 
 2. More options for music tracks so users can control what songs are played.
@@ -301,7 +302,7 @@ Some example user stories which have affected the design:
   development, I copied the entire text from the files and ran them through the
   direct input method. Upon completion, I ran the deployed site through the
   'Validate by URI' method with [results here](#w3c-validator).
-- *[Visual Studio Code](https://code.visualstudio.com/)*
+* [Visual Studio Code](https://code.visualstudio.com/)
   - A free, streamlined code editor. The [extensions](#vscode-extensions)
   available have allowed me to customize my workspace and become more
   efficient.
@@ -311,9 +312,6 @@ Some example user stories which have affected the design:
 ### Responsiveness
 * All pages were tested to ensure responsiveness on screen sizes from 320px upwards, as defined in WCAG 2.1 Reflow criteria for responsive design on Chrome, Edge, Firefox and Opera browsers.
 * Devices tested using the Google Developer Tools emulator
-
-
-
 
     * Apple iPhone 4 (320px x 480px)
     * Nokia Lumia 520 (320px x 533px) 
@@ -352,6 +350,7 @@ Some example user stories which have affected the design:
     * Nest Hub Max (1280px x 800px)
 
     ![Mobile](assets/images/readme/mobile.jpg)
+    ![Tablet](assets/images/readme/tablet.jpg)
 
 * The website is responsiveness down to a width of 300px. This means two devices were identified during testing as not being compatible (1) Galaxy Fold (280px x 653px)  (2) JioPhone 2 (240px x 320px). 
 * This will be resolved in future updates.
@@ -363,38 +362,167 @@ Some example user stories which have affected the design:
 * [W3C Markup Validator](https://validator.w3.org/#validate_by_input) 
 * No errors were found with HTML code in final testing.
     * Index Page Results<br>
-    * ![Index Page Results](assets/images/readme/w3c-index.jpg)
+     ![Index Page Results](assets/images/readme/w3c-index.jpg)
     * Game Page Results<br>
-    * ![Game Page Results](assets/images/readme/w3c-game.jpg)
+     ![Game Page Results](assets/images/readme/w3c-game.jpg)
     * Error 404 Page Results<br>
-    * ![Error 404 Page Results](assets/images/readme/w3c-404.jpg)
+     ![Error 404 Page Results](assets/images/readme/w3c-404.jpg)
 
 * [W3C CSS Validator](https://jigsaw.w3.org/css-validator/#validate_by_input) 
 * No errors were found with CSS code in final testing.
-    * ![W3C CSS Validator Results](assets/images/readme/css-validator.jpg)
+     ![W3C CSS Validator Results](assets/images/readme/css-validator.jpg)
 
 * [JSHint](https://jshint.com/)
 * No errors were found with JS code in final testing.
 * The cyclometric complexity peaks at 6 which is higher than desired. This is down to only one function within the code called Function tileClick. Due to the nature of the puzzle and the amount of logic that is applied to each tile within the game board, the complexity is not easily avoided. As a result I have opted for making the code easy to read and maintainable rather than focusing on reducing the cyclometric complexity rating.
  
-    * ![JSHint Results](assets/images/readme/jshint.jpg)
+     ![JSHint Results](assets/images/readme/jshint.jpg)
 
 ### Lighthouse
 Google Lighthouse was used to test Performance, Best Practices, Accessibility and SEO.
+
 * Website results
-    * ![Home Page](./assets/images/readme-images/lighthouse-index.jpg)
-    * ![Services Page](./assets/images/readme-images/lighthouse-services.jpg)
-    * ![Gallery Page](./assets/images/readme-images/lighthouse-gallery.jpg)
-    * ![Contact Us Page](./assets/images/readme-images/lighthouse-contact.jpg)
+
+    * Home Page<br>
+     ![Home Page](assets/images/readme/lighthouse-index.jpg)
+    * Game Page<br>
+     ![Game Page](assets/images/readme/lighthouse-game.jpg)
+    * Error 404 Page<br>
+     ![Error 404 Page](assets/images/readme/lighthouse-404.jpg)
+
+
+* Mobile results
+
+    * Home Page<br>
+     ![Home Page](assets/images/readme/lighthouse-index-mobile.jpg)
+    * Game Page<br>
+     ![Game Page](assets/images/readme/lighthouse-game-mobile.jpg)
+    * Error 404 Page<br>
+     ![Error 404 Page](assets/images/readme/lighthouse-404-mobile.jpg)
+
+* Both mobile and website results scored very well. Mobile results could perhaps be a little higher but this is likely down to chrome extensions present on the computer used to carry out the tests. As the scores are perfectly adaquate no further tweaking is deemed necessary. 
+
+### Wave
+
+* The web accessibility evaluation tool was used to identify any errors with accessabilty. 
+* I was pleased to see no errors were detected on any pages.
+
+* Wave results <br>
+![wave](assets/images/readme/wave.jpg)
 
 
 ### Functional Testing 
-* All links have been hovered and clicked to ensure accessibility, and all are working correctly.
-* All images have alt attributes
-* All links have ariel-labels
-* Pages all load correctly on all device screen sizes.
-* All social media links work correctly and open on a new tab.
-* All images load on each page as intended.
-* All navigation links are working correctly and bring the users to the function intended.
-* The form on the contact us page was tested to ensure it functioned as expected. Data is required within all sections of the form or submition isn't possible. Thank you page was displayed as expected once the form had been filled out correctly and submitted.
+
+* The puzzle element of the website requires a lot of logic to be applied and executed correctly so rigerous testing has been carried out. Results were recorded in excel and a screen shot taken. See below. 
+* All tests were passed. 
+
+* Test results<br>
 ![testing](assets/images/readme/testing.jpg)
+
+## Bugs
+
+### Current
+
+* No bugs believed to be present. 
+
+
+### Resolved
+
+* Due to the amount of logic the game requires there were multiple bugs occuring the developement stage. 
+* Below is a list of the most challenging bugs but is not an exhaustive list of all bugs resolved. 
+
+---
+
+Bug: Game would restart when user opted to cancel restart action.<br>
+Issue: An 'else' statement was placed inside the click event listener for newGame and diff which meant that the board was being populated with numbers regardless of which option the user chose.<br>
+Solution: Remove 'else' from click event listener for newGame and diff.<br>
+Commit: [a71af32](https://github.com/Tonywilson1211/P2_Sudoku/commit/9f67f473ca1e67865484b500b659acf14deba722)
+
+---
+
+Bug: User was able to undo actions taken in a previous game<br>
+Issue: Despite a new game being initiated, the user would still be able to undo/redo actions taken in previous games. The numbers pushed to the array were not deleted when a new game began.<br>
+Solution: To remove the numbers entered into the memory and future arrays they needed to be called at the moment a new game starts. This was done by placing the array function into the click event listener for newGame.<br>
+Commit: [9f67f47](https://github.com/Tonywilson1211/P2_Sudoku/commit/d9a5af95413bebe4ec42695c31788f071f3a6c98)
+
+---
+
+Bug: A number could be entered onto the game board when the game was paused if the a digit button was active at the time the game was paused.<br>
+Issue: A loop hole in the code meant that numbers could be placed on the board if the game was paused<br>
+Solution: Add an if statement to the tile click event listener that checked to see if the game was paused before allowing a number to be entered onto the board<br>
+Commit: [d9a5af9](https://github.com/Tonywilson1211/P2_Sudoku/commit/8e2a21a5e5f0eee856cdc482ab9285bd6ab114fe)
+
+---
+
+Bug: Notes did not reset when starting a new game.<br>
+Issue: No function existed in the code that sought to reset the notes entered onto the board when a new game started.<br>
+Solution: Create a function called noteReset which iterated through all tiles and when called, should remove all notes. The function was added to the click event listeners for newGame and diff.<br>
+Commit: [8e2a21a](https://github.com/Tonywilson1211/P2_Sudoku/commit/f083b197e5ed7d7c8778d152c4650e6be0b2b112)
+
+---
+
+Bug: Memory and future arrays were being updated when game was paused.<br>
+Issue: The if statement checking to see if the game was paused was positioned after the memory/future variable.<br>
+Solution: Move the if statement and ensure the first action of the click event listener is to check if the game is paused.<br>
+Commit: [f083b19](https://github.com/Tonywilson1211/P2_Sudoku/commit/4e562c73ec024cecf6634771206a72c9087d6499)
+
+
+## Deployment of This Project
+
+The website development was created in the "main" branch. This branch was deployed using GitHub Pages.
+
+* This site was deployed by completing the following steps:
+
+1. Open [GitHub](https://github.com/).
+2. Click on the project to be deployed.
+3. Navigate to the "Settings".
+4. Navigate to the "Pages" in the column on the left.
+5. Select the "main" branch and select "Save".
+6. The link to the live website will be ready after a few moments and will appear at the top of the page.
+
+## Forking This Project
+
+* Fork this project following the steps:
+
+1. Open [GitHub](https://github.com/).
+2. Click on the project to be forked.
+3. Find the 'Fork' button to the top right of the page.
+4. Once you click the button the fork will be in your repository.
+
+## Cloning This Project
+
+* Clone this project following the steps:
+
+1. Open [GitHub](https://github.com/).
+2. Click on the project to be cloned.
+3. You will be provided with three options to choose from, HTTPS, SSH or GitHub CLI, click the clipboard icon in order to copy the URL.
+4. Once you click the button the fork will be in your repository.
+5. Open a new terminal.
+6. Change the current working directory to the location that you want the cloned directory.
+7. Type 'git clone' and paste the URL copied in step 3.
+8. Press 'Enter' and the project is cloned.
+
+## Credits
+
+
+* Geranl inspiration for features and how to begin creating JS logic for a Sudoku game came from a small selection of youtube videos.<br> 
+[Link 1](https://www.youtube.com/watch?v=S4uRtTb8U-U&t=672s)<br> 
+[Link 2](https://www.youtube.com/watch?v=OT2i_X0Oqt0&t=176s)
+
+* The preset board arrangement came from a youtube video. <br> 
+[Link](https://www.youtube.com/watch?v=sr9XJJVbpw0&t=211s)
+
+* ChatGPT was used throughout the project as a reference tool. Any used code from ChatGPT has been adapted/rewritten to match my code for originality and maintain a level of consistency. <br> 
+[Link](https://openai.com/blog/chatgpt/)
+
+* Music was sourced from royalty free download link on soundcloud (via youtube)<br> 
+[Link](https://www.youtube.com/watch?v=tZq54IDY17Q)
+
+* Background image was taken from pexel.com.<br> 
+[Link](https://www.pexels.com/photo/vertical-design-on-surface-of-material-4039781/)
+  
+### Special Thanks
+
+ * Special thanks to my mentor Gareth McGirr for raising awareness for cyclometric complexity and looking at writing maintable code.
+
+ 
