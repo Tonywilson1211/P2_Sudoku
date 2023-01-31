@@ -313,28 +313,17 @@ Some example user stories which have affected the design:
 * All pages were tested to ensure responsiveness on screen sizes from 320px upwards, as defined in WCAG 2.1 Reflow criteria for responsive design on Chrome, Edge, Firefox and Opera browsers.
 * Devices tested using the Google Developer Tools emulator
 
+* Mobile Devices
     * Apple iPhone 4 (320px x 480px)
-    * Nokia Lumia 520 (320px x 533px) 
-    * Apple iPhone 5/S (320px 568px)
-    * Samsung Galaxy S9+(320px x 658px) 
     * Google Pixel 4 (353px x 745px)
     * BlackBerry Z30 (360px x 640px)  
-    * Samsung Galaxy S3 (360px x 640px)
-    * Microsoft Lumia 950 (360px x 640px) 
-    * Samsung Galaxy S8 (360px x 740px) 
-    * Apple iPhone 6/7/8 (375px x 667px)
-    * Apple iPhone X (375px x 812px)
-    * LG Optimus L70 (384px x 640px)
     * Nexus 4 (384px x 640px) 
     * Apple iPhone 12 Pro (390px x 844px)
-    * Pixel 3 (393px x 786px)
     * Google Pixel 5 (393px x 851px)
     * Google Pixel 2 (411px x 731px)
-    * Nexus 5X (412px x 732px)
     * Samsung Galaxy S20 Ultra (412px x 915px)
     * Apple iPhone 6/7/8 Plus (414px x 736px)
     * Apple iPhone XR (414px x 896px)
-    * Apple iPad Mini (468px x 4024)
     * Nokia N9 (480px x 854px)
     * Surface Duo (540px x 720px)
     * Nexus 7 (600px x 960px)
@@ -525,4 +514,3 @@ The website development was created in the "main" branch. This branch was deploy
 
  * Special thanks to my mentor Gareth McGirr for raising awareness for cyclometric complexity and looking at writing maintable code.
 
- 
