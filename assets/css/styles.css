@@ -48,7 +48,7 @@ p {
 
 /* INDEX PAGE CONFIG */
 
-/* index page buttons */
+/* index page - buttons */
 .homepage-buttons-container{
     height: 80px;
     display: flex;
@@ -82,8 +82,7 @@ p {
     margin: 6px 10px 2px 10px;
 }
 
-/* homepage - rules section */
-
+/* index page - rules section */
 #homepage-rules {
     margin: 50px 0;
     display: inline-flex;

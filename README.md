@@ -1,11 +1,11 @@
 # Sudoku - A Game Made with HTML, CSS & JavaScript.
 
 # Introduction
-Sudoku is a well known and popular puzzle game where a user is challenged correctly ascertain combinatorial number placement. Whilst all Sudoku games are based on the same principles, there are many different versions where different features are available to the user. A basic version would typically supply the board in which to solve the puzzle whereas this version is more advanced and aims to provide the user with many features such as ability to track time taken to solve the puzzle, pause the game, undo or redo actions taken, use notes to aid the completion of the puzzle, choose to hear music whilst they play and auto-solve the puzzle should the user wish. To add additional challenge the user can change the difficulty, and the number of errors made is recorded during a game encouraging replayability so as to beat their previous score. When the game is complete the user is either congratulated and shown the difficulty setting chosen, the time taken and the number of errors made. If the game not been completed correctly then the user is presented with a commiseration message.
+Sudoku is a well known and popular puzzle game where a user is challenged to correctly ascertain the number placement. Whilst all Sudoku games are based on the same principles, there are many different versions where different features are available to the user. A basic version would typically supply the board in which to solve the puzzle whereas this version is more advanced and aims to provide the user with many features such as ability to track time taken to solve the puzzle, pause the game, undo or redo actions taken, use notes to aid the completion of the puzzle, choose to hear music whilst they play and auto-solve the puzzle should the user wish. To add additional challenge, the user can change the difficulty, and the number of errors made is recorded during a game encouraging replayability so as to beat their previous score. When the game is complete, the user is either congratulated and shown the difficulty setting chosen, the time taken and the number of errors made. If the game not been completed correctly then the user is presented with a commiseration message.
 
 [Live Website Here](https://tonywilson1211.github.io/P2_Sudoku/)
 
-<p align="center"><img src="assets/images/readme/devices.jpg" alt="sudoku webpage on multiple devices"></p>
+![Devices](assets/images/readme/devices.jpg)
 
 # README Contents
 
@@ -364,7 +364,7 @@ Some example user stories which have affected the design:
 
 * [JSHint](https://jshint.com/)
 * No errors were found with JS code in final testing.
-* The cyclometric complexity peaks at 6 which is higher than desired. This is down to only one function within the code called Function tileClick. Due to the nature of the puzzle and the amount of logic that is applied to each tile within the game board, the complexity is not easily avoided. As a result I have opted for making the code easy to read and maintainable rather than focusing on reducing the cyclometric complexity rating.
+* The cyclomatic complexity peaks at 6 which is higher than desired. This is down to only one function within the code called Function tileClick. Due to the nature of the puzzle and the amount of logic that is applied to each tile within the game board, the complexity is not easily avoided. As a result I have opted for making the code easy to read and maintainable rather than focusing on reducing the cyclometric complexity rating.
  
      ![JSHint Results](assets/images/readme/jshint.jpg)
 
@@ -413,8 +413,9 @@ Google Lighthouse was used to test Performance, Best Practices, Accessibility an
 
 ### Current
 
-* No bugs believed to be present. 
-
+Bug: User can click on auto solve then enter a value into a tile and generate an alert either saying game is won or lost.<br>
+Reason: This bug is deliberate in or to show case the end game function of the puzzle without having to play the entire game all the way through.
+How to use: Click auto solve, then enter a wrong value into a tile that isn't a preset tile. A game over alert will appear. Click OK then enter the correct value back into the same tile. A congratulations alert will be triggered.
 
 ### Resolved
 
@@ -496,22 +497,22 @@ The website development was created in the "main" branch. This branch was deploy
 
 
 * Geranl inspiration for features and how to begin creating JS logic for a Sudoku game came from a small selection of youtube videos.<br> 
-[Link 1](https://www.youtube.com/watch?v=S4uRtTb8U-U&t=672s)<br> 
-[Link 2](https://www.youtube.com/watch?v=OT2i_X0Oqt0&t=176s)
+[How to Build Sudoku JavaScript Tutorial](https://www.youtube.com/watch?v=S4uRtTb8U-U&t=672s)<br> 
+[SUDOKU GAME || USING HTML ,CSS AND JAVASCRIPT || WEB PROJECT FOR BEGINNERS ||](https://www.youtube.com/watch?v=OT2i_X0Oqt0&t=176s)
 
 * The preset board arrangement came from a youtube video. <br> 
-[Link](https://www.youtube.com/watch?v=sr9XJJVbpw0&t=211s)
+[Ep. 3 - Creating the Board! | Sudoku Game Tutorial using HTML, CSS, and JavaScript](https://www.youtube.com/watch?v=sr9XJJVbpw0&t=211s)
 
 * ChatGPT was used throughout the project as a reference tool. Any used code from ChatGPT has been adapted/rewritten to match my code for originality and maintain a level of consistency. <br> 
 [Link](https://openai.com/blog/chatgpt/)
 
 * Music was sourced from royalty free download link on soundcloud (via youtube)<br> 
-[Link](https://www.youtube.com/watch?v=tZq54IDY17Q)
+[Reflection (Original Mix)](https://www.youtube.com/watch?v=tZq54IDY17Q)
 
 * Background image was taken from pexel.com.<br> 
-[Link](https://www.pexels.com/photo/vertical-design-on-surface-of-material-4039781/)
+[Pexels - Background](https://www.pexels.com/photo/vertical-design-on-surface-of-material-4039781/)
   
 ### Special Thanks
 
- * Special thanks to my mentor Gareth McGirr for raising awareness for cyclometric complexity and looking at writing maintable code.
+ * Special thanks to my mentor Gareth McGirr for raising awareness for cyclomatic complexity and looking at writing maintanable code.
 

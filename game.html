@@ -15,26 +15,32 @@
     <link rel="manifest" href="assets/images/favicon/site.webmanifest">
     <!--font awesome link-->
     <script src="https://kit.fontawesome.com/53bccbcb41.js" crossorigin="anonymous"></script>
-    <!--Title-->
+    <!--title-->
     <title>Sudoku</title>
 </head>
 <body>
+    <!--body Title-->
     <h1>Sudoku</h1>
     <hr>
+    <!--nav button-->
     <div id="how-to-play-container">
         <button id="how-to-play" class="how-to-play"  aria-label="navigates back to the home page where there are instructions on how to play the game"><i class="fa-solid fa-book-open"></i> How To Play</button>
         <div>
+            <!--music button-->
             <button id="audio-btn" class="how-to-play" aria-label="turn on or off music.">
                 Play Music
             </button>
         </div>
     </div>
+    <!--game feature buttons located at the top of the game board-->
     <div id="game-container">
         <div id="container-top">
+            <!--new game feature-->
             <div>
                 <button id="new-game" class="gamepage-buttons" aria-label="starts a new game">New Game</button>
             </div>
             <div>
+                <!--timer feature-->
                 <button id="timer" class="gamepage-buttons" aria-label="depending on the settings chosen, this timer will either count the time taken, or the time remaining.">
                     <span class="counter-text">
                         0:00 
@@ -42,28 +48,38 @@
                 </button>
             </div>
             <div>
+                <!--error counter feature-->
                 <button id="error" class="gamepage-buttons" aria-label="counts the number of errors made during a game.">
                     Errors: <span class="counter-text">0</span>
                 </button>
             </div>
         </div>
+        <!--game feature buttons located at the bottom of the game board-->
         <div id="container-bottom">
+            <!--change difficulty feature-->
             <div>
                 <button id="diff" class="gamepage-buttons" aria-label="toggle difficulty between easy, medium and hard">Easy</button>
             </div>
             <div>
+                <!--auto solve feature-->
                 <button id="auto-solve" class="gamepage-buttons" aria-label="auto solve the game">Auto Solve</button>
             </div>
         </div>
+        <!--game feature buttons located to the left of the game board-->
         <div id="container-left">
             <div>
+                <!--undo feature button-->
                 <button id="undo" class="digit-btn" aria-label="undo previous action"><i class="fa-solid fa-rotate-left"></i></button>
             </div>
             <div>
+                <!--redo feature button-->
                 <button id="redo" class="digit-btn" aria-label="redo any undo actions"><i class="fa-solid fa-rotate-right"></i></button>
             </div>
         </div>
+        <!--game board-->
         <div id="board">
+            <!--game board broken down into boxes and tiles-->
+            <!--9 boxes, 81 tiles-->
             <div id="row1">
                 <div id="box1" class="box">
                     <div id="t0" class="tile"><span></span><span></span></div>
@@ -170,6 +186,7 @@
                 </div>
             </div>
         </div>
+        <!--game feature buttons located to the right of the game board-->
         <div id="container-right">
             <div id="digits">
                 <button id="notes" class="digit-btn" aria-label="toggle note making mode"><i class="fa-solid fa-pencil"></i></button>
@@ -185,9 +202,11 @@
             </div>
         </div>
     </div>
+    <!--footer section-->
     <footer>
         <a href="https://github.com/Tonywilson1211" target="_blank" id="footer-text" aria-label="link to website creator's github page">Made By Anthony Wilson</a>
     </footer>
+    <!--javascript link-->
     <script src="assets/js/script.js"></script>
 </body>
 </html>
