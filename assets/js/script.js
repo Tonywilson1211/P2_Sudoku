@@ -18,7 +18,8 @@ let boards = [
     ]
 ]
 
- 
+// POPULATE BOARD WITH PRESET NUMBERS SECTION
+
 let diff = document.querySelector('#diff')
 let diffIndex = 0
 let difficulties = ['Easy', 'Medium', 'Hard']
@@ -55,6 +56,8 @@ function populateTiles(diffIndex) {
 
 populateTiles(0)
 
+// EVENT LISTENERS FOR GAME RESTART SECTION
+
 // listen event for difficulty button.
 diff.addEventListener('click', function() {
   if (confirm('This action will start a new game with a different difficulty')) {
@@ -79,6 +82,8 @@ if (confirm('This action will restart the game')) {
     future = []
 }
 })
+
+// PROHIT CERTAIN ACTIONS FROM THE USER SECTION
 
 let memory = []
 let errors = 0
@@ -113,6 +118,8 @@ tiles.forEach(function(tile) {
     tile.addEventListener('click', tileClick)
 })
 
+// NOTES SECTION
+
 // noteMode function allows the user to enter notes onto the board to aid them to complete the game
 function noteMode(span2) {
     let existing = span2.querySelector(`.n${chosen}`)
@@ -134,6 +141,26 @@ function noteMode(span2) {
                 existing.remove()
         }
 }
+
+// function removes all notes from the board when called.
+function notesReset() {
+    tiles = document.querySelectorAll('.tile')
+    tiles.forEach(function(note) {
+        note = document.querySelector('.note')
+        if (note) {
+            note.remove()
+        }
+    })
+}
+
+// turn active class on or off for tiles if clicked. 
+let notes = document.querySelector('#notes')
+notes.addEventListener('click', function(){
+    noting = !noting
+    notes.classList.toggle('active')
+})
+
+// MEMORY ARRAY AND ERRORS SECTION
 
 // gameMemory function records the number entered onto the board by the user for use with undo and redo functions.
 function gameMemory(span, tile) {
@@ -161,16 +188,7 @@ function errorReset() {
     document.querySelector("#error > span").innerHTML = errors
   }
 
-// function removes all notes from the board when called.
-function notesReset() {
-    tiles = document.querySelectorAll('.tile')
-    tiles.forEach(function(note) {
-        note = document.querySelector('.note')
-        if (note) {
-            note.remove()
-        }
-    })
-}
+// UNDO AND REDO BUTTON SECTION
 
 //undo button.
 let future = []
@@ -214,6 +232,8 @@ redo.addEventListener('click', function(){
         alert('Nothing to Redo!')
     }
 })
+
+// TIMER SECTION
 
 // timer function
 let time = document.querySelector('#timer > span')
@@ -268,6 +288,8 @@ timer.addEventListener('click', function() {
     }
 })
 
+// DIGIT BUTTON SECTION
+
 // digit buttons: are the number buttons on the right handside of the game board
 let digits = document.querySelectorAll('#digits > .digit-btn:nth-child(n+2)')
 let chosen = null
@@ -303,12 +325,7 @@ digits.forEach(digit => {
     digit.addEventListener('click', digitClick)
 })
 
-// turn active class on or off for tiles if clicked. 
-let notes = document.querySelector('#notes')
-notes.addEventListener('click', function(){
-    noting = !noting
-    notes.classList.toggle('active')
-})
+// AUTO SOLVE SECTION
 
 //auto solve function
 let autoSolve = document.querySelector('#auto-solve')
@@ -327,7 +344,8 @@ autoSolve.addEventListener('click', function(){
             alert('Better luck next time. Click New Game or Difficulty buttons to have another go!')
     }})
 
-// how to play button
+// HOW TO PLAY BUTTON SECTION
+
 let playBtn = document.querySelector('#how-to-play')
 // presents the user with an alert when the button is clicked.
 function howToPlayBtn() {
@@ -339,7 +357,7 @@ function howToPlayBtn() {
 }
 howToPlayBtn()
 
-// music button
+// MUSIC BUTTON SECTION
 let audio = new Audio('assets/audio/audio.mp3')
 audio.loop = true
 let playPauseBtn = document.querySelector('#audio-btn')
@@ -365,6 +383,7 @@ function playPause() {
  
 playPause()
 
+// GAME COMPLETION SECTION
 
 // completed game conditions
 // function endGame checks to see if all tiles are still empty.
